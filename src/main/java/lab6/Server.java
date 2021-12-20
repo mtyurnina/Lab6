@@ -15,4 +15,6 @@ public class Server {
         Zoo zoo = new Zoo(storeActor);
         zoo.createServer(getServerURL(port));
     }
+
+    public Server(final Http http, int )
 }
