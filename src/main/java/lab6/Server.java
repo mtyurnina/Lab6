@@ -11,10 +11,12 @@ public class Server {
     private ActorRef storeActor;
     private Duration duration = Duration.ofSeconds(5);
 
-    private void zooKeeperInitialization(int port) {
+    private void zooKeeperInitialization(int port) throws {
         Zoo zoo = new Zoo(storeActor);
         zoo.createServer(getServerURL(port));
     }
 
-    public Server(final Http http, int )
+    public Server(final Http http, int port, ActorRef storeActor) {
+
+    }
 }
