@@ -37,7 +37,8 @@ public class Server {
     }
 
     private CompletionStage<HttpResponse> redirect(String url, int count) {
-        return Patterns.ask(storeActor, new RandomServerMessage())
+        return Patterns.ask(storeActor, new RandomServerMessage(), duration)
+                .thenCompose(serverURL -> fetch(create))
     }
 
 }
