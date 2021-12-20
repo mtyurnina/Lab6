@@ -11,5 +11,7 @@ public class Server {
     private ActorRef storeActor;
     private Duration duration = Duration.ofSeconds(5);
 
-    private void zooKeeperIni
+    private void zooKeeperInitialization() {
+        
+    }
 }
