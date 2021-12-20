@@ -16,6 +16,8 @@ public class StoreActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match()
+                .match(Message.class, message -> {
+                    this.serverList = message.g
+                })
     }
 }
