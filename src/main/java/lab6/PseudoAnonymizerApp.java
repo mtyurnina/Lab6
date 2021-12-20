@@ -37,5 +37,13 @@ public class PseudoAnonymizerApp {
                 ConnectHttp.toHost(HOST, PORT),
                 actorMaterializer
         );
+
+
+        System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
+        System.in.read();
+
+        bindingCompletionStage
+                .thenCompose(ServerBinding::unbind)
+                .thenAccept(unbound -> actorSystem.terminate());
     }
 }
