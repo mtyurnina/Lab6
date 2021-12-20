@@ -35,7 +35,7 @@ public class Zoo {
 
     private void serverWatch() {
         try {
-            List<String> serverChildrenNames = zooKeeper.getChildren("/server")
+            List<String> serverChildrenNames = zooKeeper.getChildren("/servers", )
         }
     }
 }
