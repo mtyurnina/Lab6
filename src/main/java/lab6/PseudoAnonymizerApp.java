@@ -11,6 +11,6 @@ public class PseudoAnonymizerApp {
         System.out.println("start!");
         ActorSystem actorSystem = ActorSystem.create("routes");
         ActorRef storeActor = actorSystem.actorOf(StoreActor.props(), "storeActor");
-        
+
     }
 }
