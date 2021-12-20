@@ -3,13 +3,17 @@ package lab6;
 import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.Server;
+import akka.stream.javadsl.Flow;
 
 import java.io.IOException;
+import java.util.concurrent.CompletionStage;
 
 public class PseudoAnonymizerApp {
 
@@ -26,6 +30,12 @@ public class PseudoAnonymizerApp {
 
         Server server = new Server(http, PORT, storeActor);
 
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = server.createRoute().flow(actorSystem, actorMaterializer)
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = server.createRoute().flow(actorSystem, actorMaterializer);
+
+        final CompletionStage<ServerBinding> bindingCompletionStage = http.bindAndHandle(
+                routeFlow,
+                ConnectHttp.toHost(HOST, PORT),
+                actorMaterializer
+        );
     }
 }
