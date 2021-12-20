@@ -17,7 +17,8 @@ public class StoreActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(Message.class, message -> {
-                    this.serverList = message.g
+                    this.serverList = message.getServerList();
                 })
+                .match(RandomServerMessage.class)
     }
 }
