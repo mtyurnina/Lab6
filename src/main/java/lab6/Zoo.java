@@ -6,10 +6,13 @@ import org.apache.zookeeper.ZooKeeper;
 import java.io.IOException;
 
 public class Zoo {
+
+    private static final String CONNECT = "127.0.0.1:2181";
+
     private ZooKeeper zooKeeper;
     private ActorRef storeActor;
 
     public Zoo(ActorRef storeActor) throws IOException {
-        this.zooKeeper = new ZooKeeper();
+        this.zooKeeper = new ZooKeeper(CONNECT, );
     }
 }
