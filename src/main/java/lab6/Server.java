@@ -32,7 +32,9 @@ public class Server {
     }
 
     private CompletionStage<HttpResponse> fetch(String url) {
-        return http.singleRequest(HttpRequest.create())
+        return http.singleRequest(HttpRequest.create(url));
     }
+
+    private CompletionStage<HttpResponse> redirect(String)
 
 }
