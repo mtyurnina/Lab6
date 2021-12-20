@@ -19,6 +19,6 @@ public class Server {
     }
 
     public Server(final Http http, int port, ActorRef storeActor) throws IOException, InterruptedException, KeeperException {
-        return "http://localhost:"
+        return "http://localhost:" + port;
     }
 }
