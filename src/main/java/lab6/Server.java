@@ -2,10 +2,12 @@ package lab6;
 
 import akka.actor.ActorRef;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.model.HttpResponse;
 import org.apache.zookeeper.KeeperException;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.concurrent.CompletionStage;
 
 public class Server {
 
@@ -19,6 +21,15 @@ public class Server {
     }
 
     public Server(final Http http, int port, ActorRef storeActor) throws IOException, InterruptedException, KeeperException {
+        this.http = http;
+        this.storeActor = storeActor;
+        zooKeeperInitialization(port);
+    }
+
+    private String getServerURL(int port) {
         return "http://localhost:" + port;
     }
+
+    private CompletionStage<HttpResponse> fetch(String)
+
 }
