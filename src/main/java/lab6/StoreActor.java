@@ -10,6 +10,12 @@ public class StoreActor {
     }
 
     private String getRandomServer() {
-        return serverList[new Random().nextInt()]
+        return serverList[new Random().nextInt(severList.length())];
+    }
+
+    @Override
+    public Receive createReceive() {
+        return receiveBuilder()
+                .match()
     }
 }
