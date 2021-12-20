@@ -11,7 +11,8 @@ public class Server {
     private ActorRef storeActor;
     private Duration duration = Duration.ofSeconds(5);
 
-    private void zooKeeperInitialization() {
-        
+    private void zooKeeperInitialization(int port) {
+        Zoo zoo = new Zoo(storeActor);
+        zoo.createServer(getServerURL());
     }
 }
