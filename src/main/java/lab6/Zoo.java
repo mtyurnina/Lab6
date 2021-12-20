@@ -1,13 +1,10 @@
 package lab6;
 
 import akka.actor.ActorRef;
-import org.apache.zookeeper.CreateMode;
-import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.ZooDefs;
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Zoo {
@@ -15,8 +12,8 @@ public class Zoo {
     private static final String CONNECT = "127.0.0.1:2181";
     private static final int TIMEOUT = 3000;
 
-    private ZooKeeper zooKeeper;
-    private ActorRef storeActor;
+    private final ZooKeeper zooKeeper;
+    private final ActorRef storeActor;
 
     public Zoo(ActorRef storeActor) throws IOException {
         this.zooKeeper = new ZooKeeper(CONNECT, TIMEOUT, null);
@@ -35,7 +32,21 @@ public class Zoo {
 
     private void serverWatch() {
         try {
-            List<String> serverChildrenNames = zooKeeper.getChildren("/servers", )
+            List<String> serverChildrenNames = zooKeeper.getChildren("/servers",
+                    watchedEvent -> {
+                        if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged)
+                            serverWatch();
+                    });
+            List<String> serverNames = new ArrayList<>();
+
+            for (String string : serverChildrenNames) {
+                byte[] serverURL = zooKeeper.getData("/servers" + "/" + string, null, null);
+                serverNames.add(new String(serverURL));
+            }
+
+            storeActor.tell(new Message(serverNames.toArray(new String[0])), ActorRef.noSender());
+        } catch (KeeperException | InterruptedException error) {
+            error.printStackTrace();
         }
     }
 }
