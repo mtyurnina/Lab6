@@ -13,6 +13,6 @@ public class Server {
 
     private void zooKeeperInitialization(int port) {
         Zoo zoo = new Zoo(storeActor);
-        zoo.createServer(getServerURL());
+        zoo.createServer(getServerURL(port));
     }
 }
