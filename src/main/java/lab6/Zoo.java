@@ -35,7 +35,7 @@ public class Zoo {
 
     private void serverWatch() {
         try {
-            List<String> serverChildrenNames
+            List<String> serverChildrenNames = 
         }
     }
 }
