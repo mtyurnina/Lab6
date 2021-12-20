@@ -2,6 +2,7 @@ package lab6;
 
 import akka.actor.ActorRef;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import org.apache.zookeeper.KeeperException;
 
@@ -30,6 +31,8 @@ public class Server {
         return "http://localhost:" + port;
     }
 
-    private CompletionStage<HttpResponse> fetch(String)
+    private CompletionStage<HttpResponse> fetch(String url) {
+        return http.singleRequest(HttpRequest.create())
+    }
 
 }
