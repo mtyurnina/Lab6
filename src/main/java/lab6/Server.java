@@ -42,6 +42,7 @@ public class Server extends AllDirectives{
     }
 
     private String getServerURL(int port) {
+        System.out.println("getport");
         return "http://localhost:" + port;
     }
 
