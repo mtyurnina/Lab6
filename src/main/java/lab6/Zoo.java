@@ -50,7 +50,7 @@ public class Zoo {
                 byte[] serverURL = zooKeeper.getData("/servers" + "/" + string, null, null);
                 serverNames.add(new String(serverURL));
             }
-
+            System.out.println("watch3");
             storeActor.tell(new Message(serverNames.toArray(new String[0])), ActorRef.noSender());
         } catch (KeeperException | InterruptedException error) {
             System.out.println("catch");
