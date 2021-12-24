@@ -24,7 +24,7 @@ public class PseudoAnonymizeApp {
     public static void main(String[] args) throws IOException, InterruptedException, KeeperException {
         System.out.println("start!");
         ActorSystem actorSystem = ActorSystem.create("routes");
-        ActorRef storeActor = actorSystem.actorOf(StoreActor.props(), "storeActor");
+        ActorRef storeActor = actorSystem.actorOf(Props.create(StoreActor.class));
 
         final Http http = Http.get(actorSystem);
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(actorSystem);
