@@ -29,7 +29,6 @@ public class PseudoAnonymizeApp {
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(actorSystem);
 
         Server server = new Server(http, PORT, storeActor);
-        System.out.println("after");
 
         final Flow<HttpRequest, HttpResponse, NotUsed>
                 routeFlow = server.createRoute().flow(actorSystem, actorMaterializer);

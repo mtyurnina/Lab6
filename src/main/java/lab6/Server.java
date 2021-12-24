@@ -27,22 +27,17 @@ public class Server extends AllDirectives{
     private Duration duration = Duration.ofSeconds(5);
 
     private void zooKeeperInitialization(int port) throws IOException, InterruptedException, KeeperException {
-        System.out.println("init");
         Zoo zoo = new Zoo(storeActor);
-        System.out.println("init");
         zoo.createServer(getServerURL(port)); //
     }
 
     public Server(final Http http, int port, ActorRef storeActor) throws IOException, InterruptedException, KeeperException {
         this.http = http;
-        System.out.println("AA");
         this.storeActor = storeActor;
-        System.out.println("AAA");
         zooKeeperInitialization(port);
     }
 
     private String getServerURL(int port) {
-        System.out.println("getport");
         return "http://localhost:" + port;
     }
 
