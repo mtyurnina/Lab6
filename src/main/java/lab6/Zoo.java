@@ -37,6 +37,7 @@ public class Zoo {
 
     private void serverWatch() {
         try {
+            System.out.println("watch");
             List<String> serverChildrenNames = zooKeeper.getChildren("/servers",
                     watchedEvent -> {
                         if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged)
