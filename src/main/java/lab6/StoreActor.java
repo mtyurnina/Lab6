@@ -13,9 +13,9 @@ public class StoreActor extends AbstractActor{
     }
 
     private String getRandomServer() {
-        
-        System.out.println("Request redirected");
-        return serverList[new Random().nextInt(serverList.length)];
+        String url = serverList[new Random().nextInt(serverList.length)];
+        System.out.println("Request redirected: " + url);
+        return url;
     }
 
     @Override
