@@ -28,6 +28,7 @@ public class Server extends AllDirectives{
 
     private void zooKeeperInitialization(int port) throws IOException, InterruptedException, KeeperException {
         Zoo zoo = new Zoo(storeActor);
+        System.out.println("init");
         zoo.createServer(getServerURL(port));
     }
 
