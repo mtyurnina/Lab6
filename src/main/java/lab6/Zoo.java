@@ -43,6 +43,7 @@ public class Zoo {
                         if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged)
                             serverWatch();
                     });
+            System.out.println("watch");
             List<String> serverNames = new ArrayList<>();
 
             for (String string : serverChildrenNames) {
