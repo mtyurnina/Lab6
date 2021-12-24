@@ -17,6 +17,7 @@ public class Zoo {
     private final ActorRef storeActor;
 
     public Zoo(ActorRef storeActor) throws IOException {
+        System.out.println("zoo");
         this.zooKeeper = new ZooKeeper(CONNECT, TIMEOUT, null);
         this.storeActor = storeActor;
         serverWatch();
