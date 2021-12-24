@@ -24,7 +24,7 @@ public class Zoo {
 
     public void createServer(String serverURL) throws KeeperException, InterruptedException {
         zooKeeper.create(
-                "/servers/node",
+                "/servers/s",
                 serverURL.getBytes(),
                 ZooDefs.Ids.OPEN_ACL_UNSAFE,
                 CreateMode.EPHEMERAL_SEQUENTIAL
