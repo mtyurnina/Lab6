@@ -30,7 +30,7 @@ public class Server extends AllDirectives{
         System.out.println("init");
         Zoo zoo = new Zoo(storeActor);
         System.out.println("init");
-        zoo.createServer(getServerURL(port));
+        zoo.createServer(getServerURL(port)); //
     }
 
     public Server(final Http http, int port, ActorRef storeActor) throws IOException, InterruptedException, KeeperException {
@@ -42,7 +42,6 @@ public class Server extends AllDirectives{
     }
 
     private String getServerURL(int port) {
-
         return "http://localhost:" + port;
     }
 

@@ -23,6 +23,7 @@ public class Zoo {
     }
 
     public void createServer(String serverURL) throws KeeperException, InterruptedException {
+        System.out.println("create");
         zooKeeper.create(
                 "/servers/node",
                 serverURL.getBytes(),
