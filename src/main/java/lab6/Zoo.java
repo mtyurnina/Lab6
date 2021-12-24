@@ -21,6 +21,7 @@ public class Zoo {
         this.zooKeeper = new ZooKeeper(CONNECT, TIMEOUT, null);
         System.out.println("zoo");
         this.storeActor = storeActor;
+        System.out.println("zoo");
         serverWatch();
     }
 
