@@ -18,7 +18,7 @@ import java.util.concurrent.CompletionStage;
 public class PseudoAnonymizeApp {
 
     private static final String HOST = "localhost";
-    private static final int PORT = 8080;
+    private static final int PORT = 2181;
 
     public static void main(String[] args) throws IOException, InterruptedException, KeeperException {
         System.out.println("start!");
