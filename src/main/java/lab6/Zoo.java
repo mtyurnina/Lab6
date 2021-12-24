@@ -19,6 +19,7 @@ public class Zoo {
     public Zoo(ActorRef storeActor) throws IOException {
         System.out.println("zoo");
         this.zooKeeper = new ZooKeeper(CONNECT, TIMEOUT, null);
+        System.out.println("zoo");
         this.storeActor = storeActor;
         serverWatch();
     }
