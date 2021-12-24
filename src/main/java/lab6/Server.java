@@ -33,6 +33,7 @@ public class Server extends AllDirectives{
 
     public Server(final Http http, int port, ActorRef storeActor) throws IOException, InterruptedException, KeeperException {
         this.http = http;
+        System.out.println("AA");
         this.storeActor = storeActor;
         zooKeeperInitialization(port);
     }
