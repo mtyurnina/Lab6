@@ -13,7 +13,7 @@ public class StoreActor extends AbstractActor{
     }
 
     private String getRandomServer() {
-        System.out.println("Reaqest redired: " );
+        System.out.println("Request redirected");
         return serverList[new Random().nextInt(serverList.length)];
     }
 
