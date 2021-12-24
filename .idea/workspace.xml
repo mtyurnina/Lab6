@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5645be0f-230e-43e5-a19e-5b9b5cded655" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/lab6/PseudoAnonymizeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab6/PseudoAnonymizeApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab6/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab6/Zoo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
