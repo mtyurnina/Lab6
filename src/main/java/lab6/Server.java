@@ -35,6 +35,7 @@ public class Server extends AllDirectives{
         this.http = http;
         System.out.println("AA");
         this.storeActor = storeActor;
+        System.out.println("AAA");
         zooKeeperInitialization(port);
     }
 
