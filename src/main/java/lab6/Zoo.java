@@ -10,6 +10,7 @@ import java.util.List;
 public class Zoo {
 
     private static final String CONNECT = "127.0.0.1:2181";
+
     private static final int TIMEOUT = 3000;
 
     private final ZooKeeper zooKeeper;

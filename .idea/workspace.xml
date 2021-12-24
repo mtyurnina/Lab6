@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5645be0f-230e-43e5-a19e-5b9b5cded655" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab6/PseudoAnonymizerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab6/PseudoAnonymizeApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lab6/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab6/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab6/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab6/Zoo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +27,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
+  </component>
+  <component name="RunManager">
+    <configuration name="lab6" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="lab6.PseudoAnonymizeApp" />
+      <module name="Lab6" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -46,5 +58,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
