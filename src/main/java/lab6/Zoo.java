@@ -53,6 +53,7 @@ public class Zoo {
 
             storeActor.tell(new Message(serverNames.toArray(new String[0])), ActorRef.noSender());
         } catch (KeeperException | InterruptedException error) {
+            System.out.println("catch");
             error.printStackTrace();
         }
     }
